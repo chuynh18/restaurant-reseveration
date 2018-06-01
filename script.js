@@ -15,6 +15,68 @@ var renderPage = function() {
         if (data) {
             console.log(data.reservations);
             console.log(data.wait);
+
+            if (data.reservations[0]) {
+                var number = $("<th>");
+                number.attr("scope", "col");
+                number.text("#");
+
+                var name = $("<th>");
+                name.attr("scope", "col");
+                name.text("Name");
+
+                var phone = $("<th>");
+                phone.attr("scope", "col");
+                phone.text("Phone #");
+
+                var email = $("<th>");
+                email.attr("scope", "col");
+                email.text("Email Address");
+
+                var uid = $("<th>");
+                uid.attr("scope", "col");
+                uid.text("UID");
+
+                $("#reservation-heading").append(number);
+                $("#reservation-heading").append(name);
+                $("#reservation-heading").append(phone);
+                $("#reservation-heading").append(email);
+                $("#reservation-heading").append(uid);
+            }
+            else {
+                $("#reservation-heading").text("No reservations have yet been made.  Make yours today!");
+            }
+
+            if (data.wait[0]) {
+                var number = $("<th>");
+                number.attr("scope", "col");
+                number.text("#");
+
+                var name = $("<th>");
+                name.attr("scope", "col");
+                name.text("Name");
+
+                var phone = $("<th>");
+                phone.attr("scope", "col");
+                phone.text("Phone #");
+
+                var email = $("<th>");
+                email.attr("scope", "col");
+                email.text("Email Address");
+
+                var uid = $("<th>");
+                uid.attr("scope", "col");
+                uid.text("UID");
+
+                $("#wait-heading").append(number);
+                $("#wait-heading").append(name);
+                $("#wait-heading").append(phone);
+                $("#wait-heading").append(email);
+                $("#wait-heading").append(uid);
+            }
+            else {
+                $("#wait-heading").text("Nobody's on the waitlist right now.  Don't let it be you.  Reserve today!");
+            }
             
             for (var i=0; i < data.reservations.length; i++) {
     
