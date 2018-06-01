@@ -18,61 +18,55 @@ var renderPage = function() {
             
             for (var i=0; i < data.reservations.length; i++) {
     
-                var card = $("<div>");
-                card.addClass("card col-md-3 ml-3 mr-3 mb-3 pt-3 reservation");
+                var card = $("<tr>");
+
+                var cardNum = $("<td>");
+                cardNum.text(i+1);
                 
-                var cardBody = $("<div>");
-                cardBody.addClass("card-body");
-                
-                var cardTitle = $("<h5>");
-                cardTitle.addClass("card-title");
-                cardTitle.text("Name: " + data.reservations[i].name);
+                var cardTitle = $("<td>");
+                cardTitle.text(data.reservations[i].name);
     
-                var cardPhone = $("<p>");
-                cardPhone.text("Phone: " + data.reservations[i].phone);
+                var cardPhone = $("<td>");
+                cardPhone.text(data.reservations[i].phone);
     
-                var cardEmail = $("<p>");
-                cardEmail.text("E-mail: " + data.reservations[i].email);
+                var cardEmail = $("<td>");
+                cardEmail.text(data.reservations[i].email);
     
-                var cardUID = $("<p>");
-                cardUID.text("Unique ID: " + data.reservations[i].uid);
+                var cardUID = $("<td>");
+                cardUID.text(data.reservations[i].uid);
     
+                card.append(cardNum);
                 card.append(cardTitle);
-                cardBody.append(cardPhone);
-                cardBody.append(cardEmail);
-                cardBody.append(cardUID);
-                
-                card.append(cardBody);
+                card.append(cardPhone);
+                card.append(cardEmail);
+                card.append(cardUID);
     
                 $("#cardsHere").append(card);
             }
-            for (var i=0; i < data.reservations.length; i++) {
+            for (var i=0; i < data.wait.length; i++) {
     
-                var card = $("<div>");
-                card.addClass("card col-md-3 ml-3 mr-3 mb-3 pt-3 reservation");
+                var card = $("<tr>");
+
+                var cardNum = $("<td>");
+                cardNum.text(i+1);
                 
-                var cardBody = $("<div>");
-                cardBody.addClass("card-body");
-                
-                var cardTitle = $("<h5>");
-                cardTitle.addClass("card-title");
-                cardTitle.text("Name: " + data.wait[i].name);
+                var cardTitle = $("<td>");
+                cardTitle.text(data.wait[i].name);
     
-                var cardPhone = $("<p>");
-                cardPhone.text("Phone: " + data.wait[i].phone);
+                var cardPhone = $("<td>");
+                cardPhone.text(data.wait[i].phone);
     
-                var cardEmail = $("<p>");
-                cardEmail.text("E-mail: " + data.wait[i].email);
+                var cardEmail = $("<td>");
+                cardEmail.text(data.wait[i].email);
     
-                var cardUID = $("<p>");
-                cardUID.text("Unique ID: " + data.wait[i].uid);
+                var cardUID = $("<td>");
+                cardUID.text(data.wait[i].uid);
     
+                card.append(cardNum);
                 card.append(cardTitle);
-                cardBody.append(cardPhone);
-                cardBody.append(cardEmail);
-                cardBody.append(cardUID);
-                
-                card.append(cardBody);
+                card.append(cardPhone);
+                card.append(cardEmail);
+                card.append(cardUID);
     
                 $("#waitHere").append(card);
             }
